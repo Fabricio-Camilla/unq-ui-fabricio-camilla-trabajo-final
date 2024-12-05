@@ -1,21 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Icon from './components/Icon';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
+import Board from './components/Board';
+import Home from './components/Home';
 
 function App() {
-  const icons = ["A", "B", "C", "D"].flatMap((icon) => [icon,icon]).sort(() => Math.random() - 0.5); 
-  const randomIcons = icons.map((icon, i ) => ({id: i, icon})); 
   //extraccion en componente para hacer router en app, componente unico para renderizara cada icono
   return (
-    <div className='content'>
-      {randomIcons.map((icon) => 
-        <div key={icon.id} className='icon-container'>
-          <Icon icon={icon}/>
-        </div>
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/memotest" element={<Board/>}/>
+      </Routes>
+    </Router>
+    
   )
 }
 

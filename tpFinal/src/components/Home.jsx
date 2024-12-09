@@ -31,8 +31,8 @@ const Home = ({setSize, size}) => {
                             <select className='size-select' onChange={handleSize}>
                                 <option value="">Seleccionar una opcion</option>
                                     <option>4x4</option>
+                                    <option>5x5</option>
                                     <option>8x8</option>
-                                    <option>16x16</option>
                             </select>               
                         </div>         
                     </div>

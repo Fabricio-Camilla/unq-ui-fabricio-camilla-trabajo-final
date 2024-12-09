@@ -3,7 +3,7 @@ import './Icon.css'
 const Icon =({icon}) => {
     return(
         <div className='icon'>
-          {icon.icon}
+          <img src={icon.icon}/>
         </div>
     )
 

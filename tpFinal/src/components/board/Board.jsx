@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from "../icon/Icon";
 import Template from '../template/Template';
-import icons from '../../utils/IconsUtils'
+import icons from '../../utils/IconsUtils';
+import defaultIcon from '../../assets/fish.svg';
+import ModalWin from '../modal/Modal';
 import './Board.css';
 
 const Board = ({size, setSize})=>{
@@ -12,13 +14,11 @@ const Board = ({size, setSize})=>{
   const [count, setCount] = useState(0);
   const [randomIcons, setRandomIcons] = useState([]);
   const [finished ,setFinished] = useState(false);
-  
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   useEffect(()=>{
     if(!!size){
-      const totalCells = parseInt(size.split('x')[0]) * parseInt(size.split('x')[1]);
-      const boardIcons = icons.slice(0, totalCells / 2)
+      const boardIcons = icons.slice(0, size)
                               .flatMap((icon) => [icon,icon])
                               .sort(() => Math.random() - 0.5)
                               .map((icon, i ) => ({id: i, icon}));
@@ -57,15 +57,15 @@ const Board = ({size, setSize})=>{
         <div className='contador'>
           <p>Score: {count}</p>
         </div>
-        <div className='content'>
+        <div className={ size == 8 ? 'content-4x4' : size == 18 ? 'content-6x6' : 'content-8x8' }>
           {randomIcons.map((icon) => (
             selectIcon.includes(icon) || guessed.includes(icon) ? (
-              <div key={icon.id} className='icon-container'>
               <Icon icon={icon}/>
-            </div>
             ):(
             <div key={icon.id} className='default-content' onClick={() => selectIcon.length < 2 && setSelectIcon((selectIcon) => selectIcon.concat(icon))}> 
-              <img src= 'https://icongr.am/clarity/fish.svg?size=128&color=currentColor'/>
+              <div className='icon'>
+                <img src= {defaultIcon}/>
+              </div>
             </div>
             )            
           ))}

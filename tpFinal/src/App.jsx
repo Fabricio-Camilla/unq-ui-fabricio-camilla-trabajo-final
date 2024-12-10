@@ -6,7 +6,7 @@ import Home from './components/home/Home';
 
 function App() {
   //extraccion en componente para hacer router en app, componente unico para renderizara cada icono
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState(0);
   return (
     <Router>
       <Routes>

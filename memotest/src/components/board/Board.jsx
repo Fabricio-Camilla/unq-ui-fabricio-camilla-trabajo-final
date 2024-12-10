@@ -52,6 +52,18 @@ const Board = ({size, setSize})=>{
     setGuessed([]);
   }
 
+  const handlePlayAgain = ()=>{
+    setCount(0);
+    setGuessed([]);
+    setSelectIcon([]);
+    setFinished(false);
+    const boardIcons = icons.slice(0, size)
+                              .flatMap((icon) => [icon,icon])
+                              .sort(() => Math.random() - 0.5)
+                              .map((icon, i ) => ({id: i, icon}));
+      setRandomIcons(boardIcons);
+  }
+
     return(
       <Template>
         <div className='contador'>
@@ -71,8 +83,9 @@ const Board = ({size, setSize})=>{
           ))}
         </div>
           <button onClick={handleRestart}>Restart</button>
+
         {finished && 
-          <ModalWin restart={handleRestart} score={count}/>
+          <ModalWin restart={handleRestart} score={count} playAgain={handlePlayAgain}/>
         }
       </Template> 
       

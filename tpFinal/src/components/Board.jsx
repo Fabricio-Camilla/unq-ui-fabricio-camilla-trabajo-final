@@ -1,22 +1,49 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from "./Icon"
+import Icon from "./Icon";
 import Template from './Template';
+import './Board.css';
+import ruby from '../assets/ruby-original.svg';
+import mongo from '../assets/mongodb-original.svg';
+import java from '../assets/java-original.svg';
+import google from '../assets/google-original.svg';
+import postgresql from '../assets/postgresql-original.svg';
+import python from '../assets/python-original.svg';
+import twitter from '../assets/twitter-original.svg';
+import redis from '../assets/redis-original.svg';
+import react from '../assets/react-original.svg';
+import linkedin from '../assets/linkedin-original.svg';
+import explorer from '../assets/ie10-original.svg';
+import git from '../assets/github-original.svg';
+import firefox from '../assets/firefox-original.svg';
+import android from '../assets/android-original.svg';
+import angular from '../assets/angularjs-original.svg';
+import apple from '../assets/apple-original.svg';
+import c from '../assets/c-original.svg';
+import cplus from '../assets/cplusplus-original.svg';
+import docker from '../assets/docker-original.svg';
+import gitlab from '../assets/gitlab-original.svg';
+import heroku from '../assets/heroku-original.svg';
+import intellij from '../assets/intellij-original.svg';
+import kraken from '../assets/krakenjs-original.svg';
+import linux from '../assets/linux-original.svg';
+import sql from '../assets/mysql-original.svg';
+import photoshop from '../assets/photoshop-line.svg';
+import php from '../assets/phpstorm-original.svg';
+import pycharm from '../assets/pycharm-original.svg';
+import safari from '../assets/safari-original.svg';
+import slack from '../assets/slack-original.svg';
+import tomcat from '../assets/tomcat-original.svg';
+import windows from '../assets/windows8-original.svg';
+
+
+
 
 const Board = ({size, setSize})=>{
-  const icons = ['https://icongr.am/devicon/ruby-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/mongodb-original-wordmark.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/java-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/google-original.svg?size=128&color=currentColor',
-                 'https://icongr.am/devicon/postgresql-original.svg?size=128&color=currentColor',
-                 'https://icongr.am/devicon/python-original.svg?size=128&color=currentColor',
-                 'https://icongr.am/devicon/twitter-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/redis-original-wordmark.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/react-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/linkedin-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/ie10-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/github-original.svg?size=128&color=currentColor', 
-                 'https://icongr.am/devicon/firefox-original.svg?size=128&color=currentColor'];
+  const icons = [ruby, mongo, java, google, postgresql, python, twitter, redis, react, 
+                 linkedin, explorer, git, firefox, android,angular,apple, c, cplus, docker, gitlab,
+                 heroku, intellij, kraken, linux, sql, photoshop, php, pycharm, safari, slack, tomcat, windows
+                 ];
                  console.log(icons.length)
 
   const [selectIcon , setSelectIcon] = useState([]);
@@ -50,7 +77,7 @@ const Board = ({size, setSize})=>{
   }, [selectIcon])
 
   useEffect(() => {
-    if(guessed.length == randomIcons.length){
+    if(randomIcons > 0 && guessed.length == randomIcons.length){
       console.log("ganaste") //cambiar por toast u otra cosa.
 
     }
@@ -60,6 +87,7 @@ const Board = ({size, setSize})=>{
     setCount(0);
     navigate('/');
     setSize("");
+    setGuessed([]);
   }
 
     return(
@@ -76,7 +104,7 @@ const Board = ({size, setSize})=>{
             </div>
             ):(
             <div key={icon.id} className='default-content' onClick={() => selectIcon.length < 2 && setSelectIcon((selectIcon) => selectIcon.concat(icon))}> 
-              <img alt='icon'src='https://icongr.am/clarity/fish.svg?size=128&color=currentColor'/>
+              <img src= 'https://icongr.am/clarity/fish.svg?size=128&color=currentColor'/>
             </div>
             )            
           ))}

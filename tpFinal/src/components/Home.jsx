@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Template from './Template';
 import './Home.css'
-import { useNavigate } from 'react-router-dom';
 
 const Home = ({setSize, size}) => {
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Home = ({setSize, size}) => {
                             <select className='size-select' onChange={handleSize}>
                                 <option value="">Seleccionar una opcion</option>
                                     <option>4x4</option>
-                                    <option>5x5</option>
+                                    <option>6x6</option>
                                     <option>8x8</option>
                             </select>               
                         </div>         

@@ -1,0 +1,48 @@
+.content {
+    display: grid;
+    justify-content: center; 
+    align-content: center; 
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .content {
+    grid-template-columns: repeat( 4, minmax(100px, 1fr));   
+  }
+  
+  .contador {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2); 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+  }
+  
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ffffff;
+    color: #6a11cb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+  }
+  

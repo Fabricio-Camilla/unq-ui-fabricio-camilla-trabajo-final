@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Template from '../template/Template';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Home.css'
 
 const Home = ({setSize, size}) => {
@@ -8,7 +10,7 @@ const Home = ({setSize, size}) => {
 
     const handleSubmit = () => {
         if(!size){
-           console.log("selecciona un tamanio del tablero") //cambiar por toast
+            toast.error('Selecciona un tamaño del tablero para empezar')
         }else{
             navigate('/memotest')
         }
@@ -20,6 +22,15 @@ const Home = ({setSize, size}) => {
 
     return(
         <Template>
+        <ToastContainer position="bottom-right" 
+        autoClose={5000} 
+        hideProgressBar 
+        newestOnTop 
+        closeOnClick 
+        rtl={false} 
+        pauseOnFocusLoss 
+        draggable 
+        pauseOnHover />
             <div className='container'>
                 <div className='box'>
                     <div className='title-h2'>

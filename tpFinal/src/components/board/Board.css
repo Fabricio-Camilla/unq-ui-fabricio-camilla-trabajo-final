@@ -46,3 +46,11 @@
     background-color: #e0e0e0;
   }
   
+  .score{    
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  

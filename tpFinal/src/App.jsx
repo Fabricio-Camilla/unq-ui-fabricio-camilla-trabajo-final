@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import Board from './components/Board';
-import Home from './components/Home';
+import Board from './components/board/Board';
+import Home from './components/home/Home';
 
 function App() {
   //extraccion en componente para hacer router en app, componente unico para renderizara cada icono

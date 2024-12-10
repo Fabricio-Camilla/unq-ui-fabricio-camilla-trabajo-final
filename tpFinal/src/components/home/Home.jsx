@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Template from './Template';
+import Template from '../template/Template';
 import './Home.css'
 
 const Home = ({setSize, size}) => {

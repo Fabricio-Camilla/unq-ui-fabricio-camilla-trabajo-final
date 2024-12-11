@@ -6,8 +6,8 @@
 
 ## Requisitos
 
-- **Node.js**: Asegúrate de tener instalada la última versión de [Node.js](https://nodejs.org/).
-- 
+- **Node.js**: Asegúrate de tener instalado [Node.js](https://nodejs.org/).
+  
 ## Instalación
 
 1. Clona el repositorio a tu máquina local:
@@ -34,11 +34,11 @@
     npm run dev
     ```
 
-El juego se abrira en tu navegador con
+    El juego se abrira en tu navegador con
 
-  ```
-    localhost:5173
-  ```
+      ```
+        localhost:5173
+      ```
 
 
 ## Uso

@@ -19,3 +19,21 @@
     justify-content: center;
     color: #fff;
   }
+
+  @media screen and (max-width: 768px) {
+    .header {
+        font-size: 18px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        font-size: 16px;
+        height: 30px;
+    }
+
+    .container-home {
+        padding: 10px; 
+    }
+}
